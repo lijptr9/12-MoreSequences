@@ -5,8 +5,8 @@ one item at a time, using the ACCUMULATOR pattern.
         sequences, namely by MUTATING their elements.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Ji Li.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -29,7 +29,7 @@ def main():
 def run_test_make_simple_list():
     """ Tests the   make_simple_list    function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  make_simple_list  function defined below.
     #   Include at least **   2   ** tests.
     #
@@ -47,6 +47,20 @@ def run_test_make_simple_list():
     print('Actual:  ', actual)
 
     # Test 2 (add your test here):
+    expected = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    actual = make_simple_list(4, 16)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    expected = [6, 7, 8, 9, 10]
+    actual = make_simple_list(6, 10)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    expected = [99, 100, 101, 102, 103, 104, 105]
+    actual = make_simple_list(99, 105)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 
 def make_simple_list(m, n):
@@ -67,8 +81,13 @@ def make_simple_list(m, n):
       :type m: int
       :type n: int
     """
+    sequence = []
+    for k in range(m, n+1):
+        sequence = sequence+ [k]
+
+    return sequence
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
 
@@ -76,7 +95,7 @@ def make_simple_list(m, n):
 def run_test_make_simple_string():
     """ Tests the   make_simple_string    function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # DONE: 4. Implement this TEST function.
     #   It TESTS the  make_simple_string  function defined below.
     #   Include at least **   2   ** tests.
     #
@@ -86,6 +105,26 @@ def run_test_make_simple_string():
     print('--------------------------------------------------')
     print('Testing the   make_simple_string   function:')
     print('--------------------------------------------------')
+
+    expected = [5, 6, 7, 8, 9, 10, 11, 12, 13]
+    actual = make_simple_list(5, 13)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    expected = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    actual = make_simple_list(4, 16)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    expected = [6, 7, 8, 9, 10]
+    actual = make_simple_list(6, 10)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    expected = [99, 100, 101, 102, 103, 104, 105]
+    actual = make_simple_list(99, 105)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 
 def make_simple_string(m, n):
@@ -108,8 +147,14 @@ def make_simple_string(m, n):
       :type m: int
       :type n: int
     """
+    sequence = ''
+    for k in range(m, n+1):
+        sequence= sequence+ str(k)
+
+    return sequence
+
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
 
@@ -117,7 +162,7 @@ def make_simple_string(m, n):
 def run_test_make_less_simple_string():
     """ Tests the   make_less_simple_string    function. """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement this TEST function.
+    # DONE: 6. Implement this TEST function.
     #   It TESTS the  make_less_simple_string  function defined below.
     #   Include at least **   2   ** tests.
     #
