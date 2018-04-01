@@ -18,12 +18,12 @@ def main():
     run_test_make_less_simple_string()
 
     # ------------------------------------------------------------------
-    # TODO: 8. Uncomment the tests below before working TO DO 9.
+    # DONE: 8. Uncomment the tests below before working TO DO 9.
     #   They launch annoying rg.RoseWindows on each run that you don't want
     #   until you get to TO DO 9 and 10.
     # ------------------------------------------------------------------
-    # run_test_draw_shapes()
-    # run_test_rectangles_from_circles()
+    run_test_draw_shapes()
+    run_test_rectangles_from_circles()
 
 
 def run_test_make_simple_list():
@@ -106,23 +106,23 @@ def run_test_make_simple_string():
     print('Testing the   make_simple_string   function:')
     print('--------------------------------------------------')
 
-    expected = [5, 6, 7, 8, 9, 10, 11, 12, 13]
-    actual = make_simple_list(5, 13)
+    expected = '5 6 7 8 9 10 11 12 13'
+    actual = make_simple_string(5, 13)
     print('Expected:', expected)
     print('Actual:  ', actual)
 
-    expected = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-    actual = make_simple_list(4, 16)
+    expected = '4 5 6 7 8 9 10 11 12 13 14 15 16'
+    actual = make_simple_string(4, 16)
     print('Expected:', expected)
     print('Actual:  ', actual)
 
-    expected = [6, 7, 8, 9, 10]
-    actual = make_simple_list(6, 10)
+    expected = '6 7 8 9 10'
+    actual = make_simple_string(6, 10)
     print('Expected:', expected)
     print('Actual:  ', actual)
 
-    expected = [99, 100, 101, 102, 103, 104, 105]
-    actual = make_simple_list(99, 105)
+    expected = '99 100 101 102 103 104 105'
+    actual = make_simple_string(99, 105)
     print('Expected:', expected)
     print('Actual:  ', actual)
 
@@ -149,7 +149,7 @@ def make_simple_string(m, n):
     """
     sequence = ''
     for k in range(m, n+1):
-        sequence= sequence+ str(k)
+        sequence= sequence+ str(k)+' '
 
     return sequence
 
@@ -172,6 +172,26 @@ def run_test_make_less_simple_string():
     print('--------------------------------------------------')
     print('Testing the   make_less_simple_string   function:')
     print('--------------------------------------------------')
+
+    expected = '5-6-7-8-9-10-11-12-13'
+    actual = make_less_simple_string(5, 13)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    expected = '4-5-6-7-8-9-10-11-12-13-14-15-16'
+    actual = make_less_simple_string(4, 16)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    expected = '6-7-8-9-10'
+    actual = make_less_simple_string(6, 10)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    expected = '99-100-101-102-103-104-105'
+    actual = make_less_simple_string(99, 105)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 
 def make_less_simple_string(m, n):
@@ -196,8 +216,17 @@ def make_less_simple_string(m, n):
       :type m: int
       :type n: int
     """
+    sequence = ''
+    for k in range(m, n +1):
+        if k< n:
+            sequence = sequence + str(k) + '-'
+        else:
+            sequence = sequence + str(k)
+
+    return sequence
+
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -----------------------------------------------------------------
 
@@ -279,8 +308,11 @@ def draw_shapes(shapes, window):
       :type shapes:  list | tuple of rg._Shape
       :type window:  rg.RoseWindow
     """
+    for k in range(len(shapes)):
+        shapes[k].attach_to(window)
+        window.render()
     # ------------------------------------------------------------------
-    # TODO: 9. Implement and test this function. Make sure you do TO DO 8 in main first!
+    # DONE: 9. Implement and test this function. Make sure you do TO DO 8 in main first!
     #     The testing code is already written for you (that you just enabled in TO DO 8).
     #
     ####################################################################
@@ -390,6 +422,7 @@ def rectangles_from_circles(circles):
       :type circles:  list | tuple of rg.Circle
       :rtype: list of rg.Rectangles
     """
+
     # ------------------------------------------------------------------
     # TODO: 10. Implement and test this function.
     #     The testing code is already written for you (above).
