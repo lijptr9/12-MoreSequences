@@ -424,7 +424,7 @@ def rectangles_from_circles(circles):
     """
 
     # ------------------------------------------------------------------
-    # TODO: 10. Implement and test this function.
+    # DONE: 10. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
