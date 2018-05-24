@@ -435,6 +435,11 @@ def rectangles_from_circles(circles):
     #            in this function, so DON'T draw anything in here!
     ####################################################################
     # ------------------------------------------------------------------
+    rects = []
+    for k in range(len(circles)):
+        rects = rects + [circles[k].get_bounding_box()]
+
+    return rects
 
 
 # ----------------------------------------------------------------------
